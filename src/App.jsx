@@ -50,7 +50,7 @@ function App() {
             <FormTextArea as="textarea" id='remarks' value={remarks} onChange={(e) => setRemarks(e.target.value)} />
           </FormSection>
           <Spacer/>
-          <Images/>
+          <Images setFormData={setFormData} />
           <Spacer/>
           <DownloadButton onClick={handleDownloadPDF}>Download as PDF</DownloadButton>
           <Footer/>

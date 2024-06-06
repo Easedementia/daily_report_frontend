@@ -1,20 +1,29 @@
 import { useState } from 'react'
 import { FormSection, FormLabel, ImagePreview, ImageUploadContainer, RemoveIcon } from './Styles/Form.styled';
 
-const Images = () => {
+// eslint-disable-next-line react/prop-types
+const Images = ({setFormData}) => {
     const [images, setImages] = useState([]);
     console.log("Images:", images);
 
-  const handleImageUpload = (event) => {
-    const files = Array.from(event.target.files);
-    const imageUrls = files.map((file) => URL.createObjectURL(file));
-    setImages((prevImages) => [...prevImages, ...imageUrls]);
+    const handleImageUpload = (event) => {
+      const files = Array.from(event.target.files);
+      const imageUrls = files.map((file) => URL.createObjectURL(file));
+      setImages((prevImages) => {
+          const newImages = [...prevImages, ...imageUrls];
+          setFormData(prevFormData => ({ ...prevFormData, images: newImages }));
+          return newImages;
+      });
   };
 
 
-  const removeImage = (indexToRemove) =>{
+  const removeImage = (indexToRemove) => {
     setImages(images.filter((_, index) => index !== indexToRemove));
-  };
+    setFormData(prevFormData => ({
+        ...prevFormData,
+        images: prevFormData.images.filter((_, index) => index !== indexToRemove)
+    }));
+};
 
 
 
@@ -24,7 +33,7 @@ const Images = () => {
         {/* Image Upload Section */}
         <FormSection>
         <FormLabel>Upload Images:</FormLabel>
-        <input type='file' multiple accept='image/*' value={images} onChange={handleImageUpload} />
+        <input type='file' multiple accept='image/*' onChange={handleImageUpload} />
         </FormSection>
 
 

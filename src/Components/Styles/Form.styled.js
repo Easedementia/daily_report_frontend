@@ -175,14 +175,15 @@ export const ImageUploadContainer = styled.div`
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 10px;
+    justify-content: center;
 `;
 
 
 
 
 export const ImagePreview = styled.img`
-    width: 100%;
-    height: 100%;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     border: 1px solid #000;
     border-radius: 5px;
