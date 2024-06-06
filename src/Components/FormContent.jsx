@@ -1,4 +1,5 @@
-import { FormContainer, FormHeader, FormSection, FormLabel, FormTextArea } from "./Styles/Form.styled" 
+import { FormContainer, FormHeader, FormSection, FormLabel } from "./Styles/Form.styled" 
+import AutoResizingTextArea from "./AutoResizingTextArea"
 
 // eslint-disable-next-line react/prop-types
 const FormContent = ({areaOfFocus, timeTaken }) => {
@@ -11,17 +12,17 @@ const FormContent = ({areaOfFocus, timeTaken }) => {
 
         <FormSection>
             <FormLabel>Activities Done :</FormLabel>
-            <FormTextArea type="text" />
+            <AutoResizingTextArea/>
         </FormSection>
 
         <FormSection>
             <FormLabel>Purpose :</FormLabel>
-            <FormTextArea type="text" />
+            <AutoResizingTextArea/>
         </FormSection>
 
         <FormSection>
             <FormLabel>Outcome :</FormLabel>
-            <FormTextArea type="text" />
+            <AutoResizingTextArea/>
         </FormSection>
     </FormContainer>
   )
