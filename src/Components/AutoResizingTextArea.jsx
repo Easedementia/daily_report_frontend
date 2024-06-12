@@ -5,7 +5,7 @@ const AutoResizingTextArea = () => {
     const [text, setText] = useState('');
     const textAreaRef = useRef(null);
 
-    console.log("Text:", text);
+    // console.log("Text:", text);
 
     const handleChange = (e) => {
         setText(e.target.value);
@@ -18,6 +18,15 @@ const AutoResizingTextArea = () => {
         textArea.style.height = `${textArea.scrollHeight}px`
     }
 
+    function bulletPoint(event){
+      if(event.key === 'Enter')
+        event.target.value += "\u2022"
+    }
+
+    function initial(event){
+      if (event.target.value === '') event.target.value += "\u2022"
+    }
+
 
   return (
     <FormTextArea
@@ -25,6 +34,8 @@ const AutoResizingTextArea = () => {
         id="formContent"
         value={text}
         onChange={handleChange}
+        onClick={initial}
+        onKeyUp={bulletPoint}
         rows={1}
     />
   );

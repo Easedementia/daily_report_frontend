@@ -162,6 +162,9 @@ export const FormTextArea = styled.textarea`
   font-size: 16px;
   box-sizing: border-box;
   overflow: hidden;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  font-family: Arial, Helvetica, sans-serif;
   transition: height 0.2s ease;
 
   @media (max-width: 768px) {

@@ -12,17 +12,17 @@ const FormContent = ({areaOfFocus, timeTaken }) => {
 
         <FormSection>
             <FormLabel>Activities Done :</FormLabel>
-            <AutoResizingTextArea/>
+            <AutoResizingTextArea />
         </FormSection>
 
         <FormSection>
             <FormLabel>Purpose :</FormLabel>
-            <AutoResizingTextArea/>
+            <AutoResizingTextArea />
         </FormSection>
 
         <FormSection>
             <FormLabel>Outcome :</FormLabel>
-            <AutoResizingTextArea/>
+            <AutoResizingTextArea />
         </FormSection>
     </FormContainer>
   )
