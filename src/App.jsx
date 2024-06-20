@@ -28,6 +28,8 @@ function App() {
     toPDF();
   }
 
+  
+
   return (
     <>
     <div ref={targetRef}>
@@ -36,18 +38,18 @@ function App() {
           <Title color='#5f005f'>Daily Report</Title>
           <Form formData={formData} onChange={handleFormChange} />
           <Spacer/>
-          <FormContent areaOfFocus= "Physical Exercises" timeTaken="10 mnt" formData={formData} onChange={handleFormChange} />
+          <FormContent areaOfFocus= "Physical Exercises" timeTaken="10 mnt" name='phtime' formData={formData} onChange={handleFormChange} />
           <Spacer/>
-          <FormContent areaOfFocus= "Cognitive Stimulation" timeTaken="10 mnt" formData={formData} onChange={handleFormChange} />
+          <FormContent areaOfFocus= "Cognitive Stimulation" timeTaken="10 mnt" name='cogtime'  formData={formData} onChange={handleFormChange} />
           <Spacer/>
-          <FormContent areaOfFocus= "Creative Expression/ Pursuing Hobbies" timeTaken="10 mnt" formData={formData} onChange={handleFormChange} />
+          <FormContent areaOfFocus= "Creative Expression/ Pursuing Hobbies" timeTaken="10 mnt" name='crtime' formData={formData} onChange={handleFormChange} />
           <Spacer/>
-          <FormContent areaOfFocus= "Promoting Independence" timeTaken="10 mnt" formData={formData} onChange={handleFormChange} />
+          <FormContent areaOfFocus= "Promoting Independence" timeTaken="10 mnt" name='prtime' formData={formData} onChange={handleFormChange} />
           
 
           <FormSection>
             <FormLabel>Remarks:</FormLabel>
-            <FormTextArea as="textarea" id='remarks' value={remarks} onChange={(e) => setRemarks(e.target.value)} />
+            <FormTextArea as="textarea" id='remarks' name='remarktime' value={remarks} onChange={(e) => setRemarks(e.target.value)} />
           </FormSection>
           <Spacer/>
           <Images setFormData={setFormData} />

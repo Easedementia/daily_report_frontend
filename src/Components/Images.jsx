@@ -4,7 +4,7 @@ import { FormSection, FormLabel, ImagePreview, ImageUploadContainer, RemoveIcon 
 // eslint-disable-next-line react/prop-types
 const Images = ({setFormData}) => {
     const [images, setImages] = useState([]);
-    console.log("Images:", images);
+    // console.log("Images:", images);
 
     const handleImageUpload = (event) => {
       const files = Array.from(event.target.files);
